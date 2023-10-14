@@ -4,7 +4,6 @@ from PyQt5.QtCore import Qt
 
 from level import LevelWindow
 
-
 class MenuWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -30,7 +29,6 @@ class MenuWindow(QWidget):
         self.level_window = LevelWindow(file_name, self)
         self.level_window.show()
         return self.level_window
-
 
 
 if __name__ == '__main__':

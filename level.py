@@ -24,18 +24,15 @@ class LevelWindow(QWidget):
 
 
     def get_level_from_filename(self):
-        # Получаем номер уровня из имени файла
-        filename = self.input_file.split('/')[-1]  # Получаем только имя файла из пути
+        filename = self.input_file.split('/')[-1]
         level = filename.replace('input', '').replace('.txt', '')
         return level
 
     def create_title_label(self):
-        # QLabel с номером уровня
         title_label = QLabel(f"Уровень {self.level}")
         self.layout.addWidget(title_label, alignment=Qt.AlignCenter)
 
     def create_buttons_layout(self):
-        # Создаем сеточную разметку для кнопок
         self.buttons_layout = QGridLayout()
         self.layout.addLayout(self.buttons_layout)
 
@@ -78,7 +75,7 @@ class LevelWindow(QWidget):
         self.layout.addStretch()
 
     def create_exit_and_restart(self):
-        reload_button = QPushButton('Перезагрузить')
+        reload_button = QPushButton('Заново')
         reload_button.clicked.connect(self.reload_level)
         self.layout.addWidget(reload_button, alignment=Qt.AlignCenter)
 
@@ -157,7 +154,7 @@ class LevelWindow(QWidget):
         return True
 
     def show_win_message(self):
-        QMessageBox.information(self, 'УРА ДАУБИ', 'ПОБЕДААА')
+        QMessageBox.information(self, 'УРА ДАУБИ', 'ЛЕГЕНДА')
 
     def reload_level(self):
         self.buttons_layout.removeWidget(self.buttons[0][0])
